@@ -12,7 +12,7 @@ KAFKA_NEWS_TOPIC: str = os.getenv("KAFKA_NEWS_TOPIC", "market.news")
 KAFKA_SOCIAL_TOPIC: str = os.getenv("KAFKA_SOCIAL_TOPIC", "market.social")
 
 POSTGRES_HOST: str = os.getenv("POSTGRES_HOST", "localhost")
-POSTGRES_PORT: int = int(os.getenv("POSTGRES_PORT", "5432"))
+POSTGRES_PORT: int = int(os.getenv("POSTGRES_PORT", "5433"))
 POSTGRES_USER: str = os.getenv("POSTGRES_USER", "trading")
 POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD", "trading")
 POSTGRES_DB: str = os.getenv("POSTGRES_DB", "trading_signals")
@@ -33,6 +33,15 @@ NEWS_MAX_PER_SYMBOL: int = int(os.getenv("NEWS_MAX_PER_SYMBOL", "5"))
 TWEETS_MAX_PER_SYMBOL: int = int(os.getenv("TWEETS_MAX_PER_SYMBOL", "10"))
 
 TWITTER_BEARER_TOKEN: str = os.getenv("TWITTER_BEARER_TOKEN", "")
+
+MIN_ROWS_FOR_FEATURES: int = int(os.getenv("MIN_ROWS_FOR_FEATURES", "20"))
+
+FINBERT_MODEL: str = os.getenv("FINBERT_MODEL", "ProsusAI/finbert")
+SENTIMENT_BATCH_SIZE: int = int(os.getenv("SENTIMENT_BATCH_SIZE", "16"))
+
+LABEL_LOOKAHEAD_ROWS: int = int(os.getenv("LABEL_LOOKAHEAD_ROWS", "5"))
+LABEL_BUY_THRESHOLD: float = float(os.getenv("LABEL_BUY_THRESHOLD", "2.0"))
+LABEL_SELL_THRESHOLD: float = float(os.getenv("LABEL_SELL_THRESHOLD", "-2.0"))
 
 
 def postgres_dsn() -> str:
