@@ -25,3 +25,11 @@ Thumbs.db
 
 # Docker
 postgres_data/
+
+# Model checkpoints
+models/
+
+# React dashboard
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.env
